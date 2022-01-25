@@ -4,6 +4,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:wanderlust_app/pages/add_new_image.dart';
 import 'package:wanderlust_app/pages/auth/create_account_page.dart';
+import 'package:wanderlust_app/pages/auth/landing_page.dart';
 import 'package:wanderlust_app/pages/auth/password_reset_page.dart';
 import 'package:wanderlust_app/pages/auth/verify_email_page.dart';
 import 'classes/trip.dart';
@@ -42,13 +43,15 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Wanderlust App',
       theme: CustomTheme.lightTheme,
-      home: MyLoginPage(),
+      debugShowCheckedModeBanner: false,
+      home: LandingPage(),
       routes: {
         '/create_account': (context) => CreateAccountPage(),
         '/login_successful': (context) => VerifyEmailPage(),
         '/account_verified': (context) => HomepageMyTrips(),
         '/reset_password': (context) => PasswordResetPage(),
-        '/start': (context) => MyLoginPage(),
+        '/start': (context) => LandingPage(),
+        '/login': (context) => MyLoginPage(),
         //'/open_map': (context) => TripDestinationMap(),
         //'/open_gallery': (context) => TripGallery(),
         //'/open_itinerary': (context) => TripItinerary(trip: _activeTrip,),
